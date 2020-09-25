@@ -12,6 +12,8 @@ Esta es una guía básica para automatizar y gestionar copias de seguridad para 
 
 - Descargar el script BASH de dropbox antes mencionado y darle los permisos para poder ejecutarlo con el comando **chmod +rx dropbox_uploader.sh**, correrlo con **bash dropbox_uploader.sh** y seguir las instruciones.
 
+ ![alt text](https://raw.githubusercontent.com/vikebm/backup-mongo/master/Configurar%20script%20bash%20dropbox.png)
+
 - Crear otro script donde haremos uso de *mongodump* el cual ejecutaremos con un *crontab*.
 
 ```bash
@@ -42,9 +44,10 @@ PATH=/usr/bin
  # |  |  |  .------- mes (1 - 12) 
  # |  |  |  |  .---- día de la semana (0 - 6) (Sunday=0 or 7)
  # |  |  |  |  |
- # 59  23  *  *  *  Ejecuta nuestros comandos y almacenamos logs. De igual manera podemos visualizar estos logs con el comando  **grep CRON /var/log/syslog**
+ # 59  23  *  *  *  Ejecuta nuestros comandos y almacenamos logs. De igual manera podemos visualizar estos logs con el comando  **grep CRON /var/log/syslog** por si algo sale mal. 
  ```
- Nuestro crontab se ejecutará todos los dias a las 23:59.
+ Nuestro crontab se ejecutará todos los días a las 23:59.
+ 
 
 
 
